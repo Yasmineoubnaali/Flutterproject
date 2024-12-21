@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "1079022557174",
+    "project_id": "smart-app-bc41d",
+    "storage_bucket": "smart-app-bc41d.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1079022557174:android:7286746be0ef0f2217d9d7",
+        "android_client_info": {
+          "package_name": "com.oubnaali.oubnaali_"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCD1GlT3qitNb1pGACJH_VsyQTqgh2XEqU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1079022557174:android:89a5811f6feed00e17d9d7",
+        "android_client_info": {
+          "package_name": "com.oubnaali.oubnaali_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCD1GlT3qitNb1pGACJH_VsyQTqgh2XEqU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

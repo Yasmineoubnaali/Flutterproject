@@ -1,0 +1,51 @@
+allprojects {
+    repositories {
+        google()
+        mavenCentral() // Remplacement de jcenter par mavenCentral
+    }
+
+    subprojects {
+        afterEvaluate { project ->
+            if (project.hasProperty('android')) {
+                project.android {
+                    // Vérifie si le namespace est défini
+                    if (!project.android.hasProperty('namespace') || project.android.namespace == null) {
+                        project.android.namespace = "${project.group}.${project.name}"
+                    }
+                }
+            }
+        }
+    }
+}
+
+rootProject.buildDir = "../build"
+subprojects {
+    project.buildDir = "${rootProject.buildDir}/${project.name}"
+}
+
+subprojects {
+    afterEvaluate { project ->
+        if (project.hasProperty('android')) {
+            if (!project.android.hasProperty('namespace') || project.android.namespace == null) {
+                project.android.namespace = "${project.group ?: 'com.example'}.${project.name}"
+            }
+        }
+    }
+}
+
+
+tasks.register("clean", Delete) {
+    delete rootProject.buildDir
+}
+
+buildscript {
+    ext.kotlin_version = '1.9.10' // Version Kotlin
+    repositories {
+        google()
+        mavenCentral() // Utilisez Maven Central
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:7.0.0' // Utilisez une seule version
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:1.9.10"
+    }
+}
